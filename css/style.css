@@ -175,8 +175,25 @@ a:hover {
   padding-bottom: 1rem;
 }
 
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--text);
+  text-decoration: none;
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  letter-spacing: 0.02em;
+}
+
 .logo img {
-  width: 178px;
+  width: 54px;
+}
+
+.logo abbr {
+  font-size: 0.85em;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
 }
 
 .site-nav ul {
@@ -531,14 +548,4 @@ a:hover {
     transition: color 0.15s, background-color 0.15s, border-color 0.15s;
   }
 
-  .hero-photo::before {
-    animation: sunrise 1.6s ease-out both;
-  }
-
-  @keyframes sunrise {
-    from {
-      transform: translateY(45%);
-      opacity: 0;
-    }
-  }
 }
