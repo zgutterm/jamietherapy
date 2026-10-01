@@ -9,6 +9,7 @@
   --bg-sage: #dfeae1;
   --bg-peach: #fbe3d1;
   --bg-gold: #f6ebcf;
+  --sun: #f0a878;
   --text: #3a322b;
   --text-muted: #6a5f55;
   --sage: #9cc3ab;
@@ -655,13 +656,48 @@ a:hover {
     margin-top: 2.25rem;
   }
 
+  /* Specialties: one tidy card of rows instead of ragged pills */
   .pills {
-    gap: 0.5rem;
+    display: block;
+    padding: 0.35rem 1.1rem;
+    border-radius: 14px;
+    background: var(--bg);
   }
 
-  .pills li {
-    padding: 0.35rem 0.85rem;
-    font-size: 0.975rem;
+  .pills li,
+  .pills li:nth-child(3n),
+  .pills li:nth-child(3n+2) {
+    display: flex;
+    align-items: baseline;
+    gap: 0.7rem;
+    padding: 0.7rem 0;
+    border-radius: 0;
+    border-bottom: 1px solid var(--rule);
+    background: none;
+    font-size: 1.0625rem;
+    line-height: 1.4;
+  }
+
+  .pills li:last-child {
+    border-bottom: 0;
+  }
+
+  .pills li::before {
+    content: "";
+    flex: none;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background: var(--sage);
+    transform: translateY(-0.1rem);
+  }
+
+  .pills li:nth-child(3n+2)::before {
+    background: var(--sun);
+  }
+
+  .pills li:nth-child(3n)::before {
+    background: var(--gold);
   }
 
   .callout {
