@@ -283,14 +283,6 @@ a:hover {
   border-radius: 14px;
 }
 
-/* Offset sage block behind the portrait */
-.hero-photo {
-  padding: 0 14px 14px 0;
-}
-
-.hero-photo img {
-  box-shadow: 14px 14px 0 var(--sage);
-}
 
 .availability {
   display: flex;
