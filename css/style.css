@@ -6,7 +6,10 @@
 :root {
   --bg: #fbf7f0;
   --bg-soft: #f3ece0;
-  --bg-sage: #e9f0ea;
+  --bg-sage: #dfeae1;
+  --bg-peach: #fbe3d1;
+  --bg-gold: #f6ebcf;
+  --sun: #f0a878;
   --text: #3a322b;
   --text-muted: #6a5f55;
   --sage: #9cc3ab;
@@ -114,6 +117,29 @@ a:hover {
 
 .section-sage {
   background: var(--bg-sage);
+}
+
+.section-peach {
+  background: var(--bg-peach);
+}
+
+.section-gold {
+  background: var(--bg-gold);
+}
+
+/* Sprout mark above section headings, echoing the logo */
+.section > .wrap:not(.prose) > h2::before {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 30px;
+  margin-bottom: 0.6rem;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 30V14' stroke='%2347735b' stroke-width='2' stroke-linecap='round' fill='none'/%3E%3Cpath d='M16 17C16 10 11 7 4 7c0 7 5 10 12 10z' fill='%239cc3ab'/%3E%3Cpath d='M16 13c0-6 4-9 11-9 0 6-4 9-11 9z' fill='%23d4b872'/%3E%3C/svg%3E") no-repeat center / contain;
+}
+
+.cta h2::before {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .eyebrow {
@@ -232,9 +258,35 @@ a:hover {
   align-items: center;
 }
 
+.hero {
+  overflow-x: clip;
+}
+
 .hero img,
 .photo {
   border-radius: 14px;
+}
+
+/* Rising sun behind the portrait, echoing the logo */
+.hero-photo {
+  position: relative;
+  margin-top: 2.5rem;
+}
+
+.hero-photo::before {
+  content: "";
+  position: absolute;
+  top: -14%;
+  right: 6%;
+  width: 62%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--sun);
+  box-shadow: 0 0 0 14px var(--gold);
+}
+
+.hero-photo img {
+  position: relative;
 }
 
 .availability {
@@ -291,18 +343,29 @@ a:hover {
   border-top: 3px solid var(--sage);
 }
 
-.plain-list {
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
   list-style: none;
   padding: 0;
   margin: 0;
-  columns: 1;
 }
 
-.plain-list li {
-  padding: 0.55rem 0;
+.pills li {
   margin: 0;
-  border-bottom: 1px solid var(--rule);
-  break-inside: avoid;
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  background: var(--bg);
+  font-size: 1.05rem;
+}
+
+.pills li:nth-child(3n+2) {
+  background: var(--bg-peach);
+}
+
+.pills li:nth-child(3n) {
+  background: var(--bg-gold);
 }
 
 .credentials {
@@ -449,10 +512,6 @@ a:hover {
     gap: 3rem;
   }
 
-  .plain-list {
-    columns: 2;
-    column-gap: 3rem;
-  }
 }
 
 @media (max-width: 600px) {
@@ -470,5 +529,16 @@ a:hover {
 @media (prefers-reduced-motion: no-preference) {
   .btn, a {
     transition: color 0.15s, background-color 0.15s, border-color 0.15s;
+  }
+
+  .hero-photo::before {
+    animation: sunrise 1.6s ease-out both;
+  }
+
+  @keyframes sunrise {
+    from {
+      transform: translateY(45%);
+      opacity: 0;
+    }
   }
 }
