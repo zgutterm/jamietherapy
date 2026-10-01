@@ -5,7 +5,7 @@ Static site for Jamie Gutterman, LCSW. Plain HTML and one stylesheet (`css/style
 ## Editing
 
 - Each page is a standalone `.html` file. The header and footer are repeated in every page, so a nav or footer change needs making in all six (`index`, `about`, `services`, `fees`, `contact`, `404`).
-- The availability line ("Telehealth for clients in ... · Currently accepting new clients") is in `index.html`.
+- The availability items ("Accepting new clients", "Telehealth across North Carolina") are in the hero of `index.html`.
 - Search for `TODO` to find copy that still needs Jamie's confirmation.
 - `home/` holds redirect stubs for the old WordPress URLs. Leave them in place.
 

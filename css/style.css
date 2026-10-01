@@ -9,7 +9,6 @@
   --bg-sage: #dfeae1;
   --bg-peach: #fbe3d1;
   --bg-gold: #f6ebcf;
-  --sun: #f0a878;
   --text: #3a322b;
   --text-muted: #6a5f55;
   --sage: #9cc3ab;
@@ -284,35 +283,44 @@ a:hover {
   border-radius: 14px;
 }
 
-/* Rising sun behind the portrait, echoing the logo */
+/* Offset sage block behind the portrait */
 .hero-photo {
-  position: relative;
-  margin-top: 2.5rem;
-}
-
-.hero-photo::before {
-  content: "";
-  position: absolute;
-  top: -14%;
-  right: 6%;
-  width: 62%;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: var(--sun);
-  box-shadow: 0 0 0 14px var(--gold);
+  padding: 0 14px 14px 0;
 }
 
 .hero-photo img {
-  position: relative;
+  box-shadow: 14px 14px 0 var(--sage);
 }
 
 .availability {
-  display: inline-block;
-  margin: 0.5rem 0 0;
-  padding: 0.45rem 0.9rem;
-  border-radius: 8px;
-  background: var(--bg-sage);
-  font-size: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.availability li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.availability li::before {
+  content: "";
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  background: var(--gold);
+}
+
+.availability li:first-child::before {
+  background: var(--sage-deep);
 }
 
 /* ===== Page title ===== */
