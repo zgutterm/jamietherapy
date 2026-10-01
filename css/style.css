@@ -531,15 +531,145 @@ a:hover {
 
 }
 
+.portal-top {
+  display: none;
+}
+
+.prose .photo:first-child {
+  margin-top: 0;
+}
+
+/* ===== Phones ===== */
 @media (max-width: 600px) {
+  body {
+    font-size: 1.0625rem;
+    line-height: 1.65;
+  }
+
+  .section {
+    padding: 2.75rem 0;
+  }
+
+  .lede {
+    font-size: 1.125rem;
+  }
+
+  /* Header: logo and portal on one row, page links on the next */
   .site-header .wrap {
-    justify-content: center;
+    gap: 0.6rem 0.75rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.25rem;
+  }
+
+  .logo {
+    flex: 1 1 0;
+    min-width: 0;
+    gap: 0.6rem;
+    font-size: 1rem;
+    line-height: 1.2;
+  }
+
+  .logo img {
+    width: 40px;
+  }
+
+  .logo abbr {
+    display: block;
+  }
+
+  .portal-top {
+    display: inline-block;
+    padding: 0.3rem 0.7rem;
+    border: 1.5px solid var(--sage-deep);
+    border-radius: 999px;
+    color: var(--sage-deep);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .portal-item {
+    display: none;
+  }
+
+  .site-nav {
+    flex-basis: 100%;
+    border-top: 1px solid var(--rule);
   }
 
   .site-nav ul {
-    justify-content: center;
-    gap: 0 1.1rem;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 0.5rem;
+    font-size: clamp(0.85rem, 4.2vw, 1rem);
+    white-space: nowrap;
+  }
+
+  .site-nav a {
+    padding: 0.6rem 0;
+  }
+
+  /* Hero: portrait first, full-width buttons */
+  .hero {
+    padding: 1.25rem 0 2.75rem;
+  }
+
+  .hero .wrap {
+    gap: 1.5rem;
+  }
+
+  .hero-photo {
+    order: -1;
+  }
+
+  .hero-photo img {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    object-position: 60% 30%;
+  }
+
+  .availability {
     font-size: 1rem;
+  }
+
+  .actions {
+    flex-direction: column;
+    margin-top: 1.5rem;
+  }
+
+  .actions .btn {
+    text-align: center;
+  }
+
+  .page-title {
+    padding-top: 2rem;
+  }
+
+  .page-title + .section {
+    padding-top: 1.75rem;
+  }
+
+  .prose h2 {
+    margin-top: 2.25rem;
+  }
+
+  .pills {
+    gap: 0.5rem;
+  }
+
+  .pills li {
+    padding: 0.35rem 0.85rem;
+    font-size: 0.975rem;
+  }
+
+  .callout {
+    padding: 1rem 1.1rem;
+  }
+
+  .site-footer {
+    padding: 2rem 0;
   }
 }
 
