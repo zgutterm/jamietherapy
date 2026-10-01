@@ -21,7 +21,7 @@ Then open http://localhost:8765.
 
 1. Push this folder to a GitHub repository.
 2. Repository Settings > Pages > Source: "Deploy from a branch", branch `main`, folder `/ (root)`.
-3. The `CNAME` file sets the custom domain to `jamieguttermantherapy.com`.
+3. When ready to go live, set the custom domain to `jamieguttermantherapy.com` in the Pages settings (this adds a `CNAME` file). It is left unset for now so the `github.io` preview URL works.
 4. At the domain registrar, point DNS at GitHub Pages:
    - `A` records for the apex domain: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
    - `CNAME` record for `www`: `<github-username>.github.io`
